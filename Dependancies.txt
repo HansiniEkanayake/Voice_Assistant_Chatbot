@@ -1,1 +1,2 @@
 pyttsx3 : https://pypi.org/project/pyttsx3/ : pip install pyttsx3
+numpy: numpy==1.19.3 : pip install numpy==1.19.3
