@@ -16,92 +16,102 @@
 
         {
             "tag": "deposit",
-            "patterns": [ "DEPOSIT", "deposit", "Deposit", "#DEPOSIT" ],
-            "responses": [ "what is the type of account? #SAVING  #FD", "Can I know type of account? #SAVING  #FD", "please enter the type of account? #SAVING  #FD" ],
+            "patterns": [ "what are the deposit categories you have?", "can I know about your deposits", "Do you have deposit for any age limit", "I want to know about deposit" ],
+            "responses": [ "we have two type of deposit categories #SAVING  #FD", "yes.They are: #SAVING  #FD", "yes we have those two types of deposit for any age limit: #SAVING  #FD", "please enter the type of account that you want to know? #SAVING  #FD" ],
             "context_set": ""
         },
 
         {
             "tag": "saving",
-            "patterns": [ "SAVING", "saving", "Saving", "#SAVING" ],
-            "responses": [ "what is the age limit that you belong? #(0-18) #(19-25) #(26-55) #(55+) #WOMEN" ],
+            "patterns": [ "what are age limit for your savings?", "I want to know about saving types", "Is there any deposit for women?", "What are the savings do you have?" ],
+            "responses": [ "Age limit for savings: #(0-18) #(19-25) #(26-55) #(55+) #WOMEN", "we have saving for : #(0-18) #(18+) #(26-55) #(55+) age limits", "Yes.Have those categories also: #(0-18) #(19-25) #(26-55) #(55+) ", "we have saving for those age limit: #(0-18) #(19-25) #(26-55) #(55+)" ],
             "context_set": ""
         },
 
         {
-            "tag": "0-18",
-            "patterns": [ "#(0-18)", "(0-18)", "0-18" ],
-            "responses": [ "Ran Kekulu account can be opened at any Bank of Ceylon branch island wide by a parent or a guardian for their children below 18 years.Offer 5%  interest rate.Want Original birth certificate of the child together with a photocopy,NIC of guardian.Main Menu #DEPOSIT #LOAN" ],
+            "tag": "0-18Saving",
+            "patterns": [ "what is the suitable saving for children", "can children below 18 open account", "what are the features of RAN KEKULU", "what is Ran Kekulu" ],
+            "responses": [ "Ran Kekulu account can be opened at any Bank of Ceylon branch island wide by a parent or a guardian for their children below 18 years.Offer 5%  interest rate.Want Original birth certificate of the child together with a photocopy,NIC of guardian." ],
             "context_set": ""
         },
 
         {
-            "tag": "19-25",
-            "patterns": [ "#(19-25)", "19-25", "(19-25)" ],
-            "responses": [ "18+ account can be opened at any Bank of Ceylon branch by any Sri Lankan citizen between the age of 18 to 25.Offer 0.5% higher interest rate than the normal savings account.Want NIC and Address proof.Main Menu #DEPOSIT #LOAN" ],
+            "tag": "18+Saving",
+            "patterns": [ "what is 18+ saving?", "what are the features 18+?", "what is the age limit for 18+ saving?", "How could I open 18+ account?" ],
+            "responses": [ "18+ account can be opened at any Bank of Ceylon branch by any Sri Lankan citizen between the age of 18 to 25.Offer 0.5% higher interest rate than the normal savings account.Want NIC and Address proof." ],
             "context_set": ""
         },
 
         {
-            "tag": "26-55",
-            "patterns": [ "#(26-55)", "(26-55)", "26-55" ],
-            "responses": [ "BoC Normal Savings Accounts can be opened by any Sri Lankan Citizen above the age of 18 years at any Bank of Ceylon branch island wide.Offer 4%  interest rate.Want NIC and Address proof.Main Menu #DEPOSIT #LOAN" ],
+            "tag": "26-55Saving",
+            "patterns": [ "what is the saving type for middle age one?", "what is the normal saving?", "How could I open normal saving account?", "what is the age range for normal account?" ],
+            "responses": [ "BoC Normal Savings Accounts can be opened by any Sri Lankan Citizen above the age of 18 years at any Bank of Ceylon branch island wide.Offer 4%  interest rate.Want NIC and Address proof." ],
             "context_set": ""
         },
 
         {
-            "tag": "55+",
-            "patterns": [ "(55+)", "55+" ],
-            "responses": [ " BOC Senior Citizens Account can be opened at any Bank of Ceylon Branch island wide by a Sri Lankans over the age of 55 years.Offer 5%  interest rate.Want NIC and Address proof.Main Menu #DEPOSIT #LOAN" ],
+            "tag": "55+Saving",
+            "patterns": [ "can senior person open account?", "what are the features for 55+?", "what is the saving type for person above 55?" ],
+            "responses": [ " BOC Senior Citizens Account can be opened at any Bank of Ceylon Branch island wide by a Sri Lankans over the age of 55 years.Offer 5%  interest rate.Want NIC and Address proof." ],
             "context_set": ""
         },
 
         {
-            "tag": "women",
-            "patterns": [ "WOMEN", "women", "#WOMEN" ],
-            "responses": [ "BOC Kantha Ran GinumAccount can be opened at any Bank of Ceylon Branch island wide if you are a woman of 18 years old or above.Offer 0.5% higher interest rate than the normal savings account.Want NIC and address proof.Main Menu #DEPOSIT #LOAN" ],
+            "tag": "womenSaving",
+            "patterns": [ "Is there any special saving type for women?", "what is kantha ran ginum account?", "what are saving for women?", "what are the features for kantha ran ginum account?" ],
+            "responses": [ "BOC Kantha Ran Ginum Account can be opened at any Bank of Ceylon Branch island wide if you are a woman of 18 years old or above.Offer 0.5% higher interest rate than the normal savings account.Want NIC and address proof." ],
             "context_set": ""
         },
 
         {
             "tag": "fd",
-            "patterns": [ "FD", "fd", "Fd", "#FD" ],
-            "responses": [ "Sri Lankans over 18 Years of age are eligible to open an account.Minimum Deposit Rs. 10,000/.Period – 01,03,06 Months and 01 to 05 Years.Rates changeble accoring to government rules and regulations.More info contact 011-XXXXXXX.Main Menu #DEPOSIT #LOAN" ],
+            "patterns": [ "I want to know about FD", "What is the rate for FD", "what are the feature of FD", "what is FD?" ],
+            "responses": [ "Sri Lankans over 18 Years of age are eligible to open an FD account.Minimum Deposit Rs. 10,000/.Period – 01,03,06 Months and 01 to 05 Years.Rates changeble accoring to government rules and regulations.More info contact 011-XXXXXXX." ],
             "context_set": ""
         },
 
         {
             "tag": "loan",
-            "patterns": [ "LOAN", "loan", "Loan", "#LOAN" ],
-            "responses": [ "what is the age limit that you belong? #PERSONAL #LEASING #EDUCATION" ],
+            "patterns": [ "what are the loan type that you have?", "I want to know about loans", "what are the loans?", "can I get housing loan?" ],
+            "responses": [ "we have three type of loans #PERSONAL #LEASING #EDUCATION . what do you want to know about?" ],
             "context_set": ""
         },
 
         {
             "tag": "personal",
-            "patterns": [ "PERSONAL", "personal", "Personal", "#PERSONAL" ],
-            "responses": [ "Can be applied for any personal requirement.Requirement: Government Service receiving a minimum take home salary of Rs. 30,000/,Statutory Bodies/enlisted Companies receiving a take home salary above Rs. 40,000/-.Maximum loan amount is Rs. 10,000,000/.Rate 9.25%.Main Menu #DEPOSIT #LOAN" ],
+            "patterns": [ "I want a loan for wedding", "want to know about housing loan", "what is the minimum salary to get personal loan?", "what is personal loan?" ],
+            "responses": [ "Can be applied for any personal need include wedding,making house.Requirement: Government Service receiving a minimum take home salary of Rs. 30,000/,Statutory Bodies/enlisted Companies receiving a take home salary above Rs. 40,000/-.Maximum loan amount is Rs. 10,000,000/.Rate 9.25%." ],
             "context_set": ""
         },
 
         {
             "tag": "leasing",
-            "patterns": [ "LEASING", "leasing", "Leasing", "#LEASING" ],
-            "responses": [ "For Vehicles - Both registered and unregistered.Contact our leasing manager 011-XXXXXXX.Main Menu #DEPOSIT #LOAN" ],
-            "context_set": ""
+            "patterns": [ "what is leasing", "can I get lease for car?", "can I get lease for unregistered vehicle?" ],
+            "responses": [
+                "\"For Vehicles - Both registered and unregistered.Contact our leasing manager 011-XXXXXXX.],",
+                "context_set",
+                :,
+                ""
         },
 
         {
             "tag": "education",
-            "patterns": [ "EDUCATION", "education", "Education", "#EDUCATION" ],
-            "responses": [ "Can apply for local & forign universities.Option of paying only the interest until the degree is complete.BOC Customers, Students with minimum of 03 passes for G.C.E (A/L) or Students with minimum of 3 passes for G.C.E. (A/L) can apply this loan. you should want Loan Application,Letter from University,Proof of identification (NIC/Passport).Main Menu #DEPOSIT #LOAN " ],
+            "patterns": [ "Want a loan for degree", "what are the feature of education loan?", "what is education loan?", "what are the eligibility for education loan?", "can I apply education loan for forign universities?" ],
+            "responses": [ "Can apply for local & forign universities.Option of paying only the interest until the degree is complete.BOC Customers, Students with minimum of 03 passes for G.C.E (A/L) or Students with minimum of 3 passes for G.C.E. (A/L) can apply this loan. you should want Loan Application,Letter from University,Proof of identification (NIC/Passport)." ],
             "context_set": ""
         },
 
         {
             "tag": "other",
             "patterns": [ "" ],
-            "responses": [ "sorry I can't recogonize what you entered. Main Menu #DEPOSIT #LOAN" ],
+            "responses": [ "sorry I can't recogonize what you entered." ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "hours",
+            "patterns": [ "when are you guys open", "what are your hours", "hours of operation" ],
+            "responses": [ "We are open 8am-3pm Monday-friday!" ],
             "context_set": ""
         },
 
