@@ -5,8 +5,34 @@ import speech_recognition
 from gtts import gTTS
 from tempfile import TemporaryFile
 import pyttsx3
+import json
+import random
+#ML libaries
+import nltk
+from nltk.stem.lancaster import LancasterStemmer
+stemmer = LancasterStemmer()
 
+import numpy
+import tensorflow
+import tflearn
 
+with open("Dset.json") as DsetFile:
+    Dset = json.load(DsetFile)
+
+KeyWords = []
+labels = []
+patternVals = []
+patternKeys = []
+
+for DataBlock in Dset["intents"]:
+    for Q_Pattern in DataBlock["patterns"]:
+        #Words in patterns are processed into its root words and store in KeyWords list.
+        KeyWords = nltk.word_tokenize(Q_Pattern)
+        #Patterns are add into the patternVals List.
+        patternVals.append(Q_Pattern)
+        
+        if DataBlock["tag"] not in labels:
+            labels.append(DataBlock["tag"])
 
 def AudioOut(text):
     #Transfers the text to an audion file in English using gTTS
@@ -52,8 +78,6 @@ def AudioIn():
 
 
 #AudioOut("Hello! How are you")
-
-text = AudioIn()
 #
 # text2 = "Hello"
 #
