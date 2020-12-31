@@ -1,33 +1,115 @@
-{"intents": [
-        {"tag": "greeting",
-         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up"],
-         "responses": ["Hello!", "Good to see you again!", "Hi there, how can I help?"],
-         "context_set": ""
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [ "Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up" ],
+            "responses": [ "Hello! Warmly welcome to BOC...Please select the category that you want to know: #DEPOSIT #LOAN", "Good to see you and Warmly welcome to BOC... Please select the category that you want to know: #DEPOSIT #LOAN", "Hi there, Warmly welcome to BOC... How can I help? Please select the category that you want to know: #DEPOSIT #LOAN" ],
+            "context_set": ""
         },
-        {"tag": "goodbye",
-         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
-         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
-         "context_set": ""
+
+        {
+            "tag": "goodbye",
+            "patterns": [ "cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day" ],
+            "responses": [ "Sad to see you go :(", "Talk to you later", "Goodbye!" ],
+            "context_set": ""
         },
-        {"tag": "age",
-         "patterns": ["how old", "how old is tim", "what is your age", "how old are you", "age?"],
-         "responses": ["I am 18 years old!", "18 years young!"],
-         "context_set": ""
+
+        {
+            "tag": "deposit",
+            "patterns": [ "DEPOSIT", "deposit", "Deposit", "#DEPOSIT" ],
+            "responses": [ "what is the type of account? #SAVING  #FD", "Can I know type of account? #SAVING  #FD", "please enter the type of account? #SAVING  #FD" ],
+            "context_set": ""
         },
-        {"tag": "name",
-         "patterns": ["what is your name", "what should I call you", "whats your name?"],
-         "responses": ["You can call me Tim.", "I'm Tim!", "I'm Tim aka Tech With Tim."],
-         "context_set": ""
+
+        {
+            "tag": "saving",
+            "patterns": [ "SAVING", "saving", "Saving", "#SAVING" ],
+            "responses": [ "what is the age limit that you belong? #(0-18) #(19-25) #(26-55) #(55+) #WOMEN" ],
+            "context_set": ""
         },
-        {"tag": "shop",
-         "patterns": ["Id like to buy something", "whats on the menu", "what do you reccommend?", "could i get something to eat"],
-         "responses": ["We sell chocolate chip cookies for $2!", "Cookies are on the menu!"],
-         "context_set": ""
+
+        {
+            "tag": "0-18",
+            "patterns": [ "#(0-18)", "(0-18)", "0-18" ],
+            "responses": [ "Ran Kekulu account can be opened at any Bank of Ceylon branch island wide by a parent or a guardian for their children below 18 years.Offer 5%  interest rate.Want Original birth certificate of the child together with a photocopy,NIC of guardian.Main Menu #DEPOSIT #LOAN" ],
+            "context_set": ""
         },
-        {"tag": "hours",
-         "patterns": ["when are you guys open", "what are your hours", "hours of operation"],
-         "responses": ["We are open 7am-4pm Monday-Friday!"],
-         "context_set": ""
+
+        {
+            "tag": "19-25",
+            "patterns": [ "#(19-25)", "19-25", "(19-25)" ],
+            "responses": [ "18+ account can be opened at any Bank of Ceylon branch by any Sri Lankan citizen between the age of 18 to 25.Offer 0.5% higher interest rate than the normal savings account.Want NIC and Address proof.Main Menu #DEPOSIT #LOAN" ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "26-55",
+            "patterns": [ "#(26-55)", "(26-55)", "26-55" ],
+            "responses": [ "BoC Normal Savings Accounts can be opened by any Sri Lankan Citizen above the age of 18 years at any Bank of Ceylon branch island wide.Offer 4%  interest rate.Want NIC and Address proof.Main Menu #DEPOSIT #LOAN" ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "55+",
+            "patterns": [ "(55+)", "55+" ],
+            "responses": [ " BOC Senior Citizens Account can be opened at any Bank of Ceylon Branch island wide by a Sri Lankans over the age of 55 years.Offer 5%  interest rate.Want NIC and Address proof.Main Menu #DEPOSIT #LOAN" ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "women",
+            "patterns": [ "WOMEN", "women", "#WOMEN" ],
+            "responses": [ "BOC Kantha Ran GinumAccount can be opened at any Bank of Ceylon Branch island wide if you are a woman of 18 years old or above.Offer 0.5% higher interest rate than the normal savings account.Want NIC and address proof.Main Menu #DEPOSIT #LOAN" ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "fd",
+            "patterns": [ "FD", "fd", "Fd", "#FD" ],
+            "responses": [ "Sri Lankans over 18 Years of age are eligible to open an account.Minimum Deposit Rs. 10,000/.Period – 01,03,06 Months and 01 to 05 Years.Rates changeble accoring to government rules and regulations.More info contact 011-XXXXXXX.Main Menu #DEPOSIT #LOAN" ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "loan",
+            "patterns": [ "LOAN", "loan", "Loan", "#LOAN" ],
+            "responses": [ "what is the age limit that you belong? #PERSONAL #LEASING #EDUCATION" ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "personal",
+            "patterns": [ "PERSONAL", "personal", "Personal", "#PERSONAL" ],
+            "responses": [ "Can be applied for any personal requirement.Requirement: Government Service receiving a minimum take home salary of Rs. 30,000/,Statutory Bodies/enlisted Companies receiving a take home salary above Rs. 40,000/-.Maximum loan amount is Rs. 10,000,000/.Rate 9.25%.Main Menu #DEPOSIT #LOAN" ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "leasing",
+            "patterns": [ "LEASING", "leasing", "Leasing", "#LEASING" ],
+            "responses": [ "For Vehicles - Both registered and unregistered.Contact our leasing manager 011-XXXXXXX.Main Menu #DEPOSIT #LOAN" ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "education",
+            "patterns": [ "EDUCATION", "education", "Education", "#EDUCATION" ],
+            "responses": [ "Can apply for local & forign universities.Option of paying only the interest until the degree is complete.BOC Customers, Students with minimum of 03 passes for G.C.E (A/L) or Students with minimum of 3 passes for G.C.E. (A/L) can apply this loan. you should want Loan Application,Letter from University,Proof of identification (NIC/Passport).Main Menu #DEPOSIT #LOAN " ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "other",
+            "patterns": [ "" ],
+            "responses": [ "sorry I can't recogonize what you entered. Main Menu #DEPOSIT #LOAN" ],
+            "context_set": ""
+        },
+
+        {
+            "tag": "hours",
+            "patterns": [ "when are you guys open", "what are your hours", "hours of operation" ],
+            "responses": [ "We are open 8am-3pm Monday-friday!" ],
+            "context_set": ""
         }
-   ]
+    ]
 }
