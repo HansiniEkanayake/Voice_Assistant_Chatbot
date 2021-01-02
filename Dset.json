@@ -66,7 +66,7 @@
         {
             "tag": "fd",
             "patterns": [ "I want to know about FD", "What is the rate for FD", "what are the feature of FD", "what is FD?" ],
-            "responses": [ "Sri Lankans over 18 Years of age are eligible to open an FD account.Minimum Deposit Rs. 10,000/.Period – 01,03,06 Months and 01 to 05 Years.Rates changeble accoring to government rules and regulations.More info contact 011-XXXXXXX." ],
+            "responses": [ "Sri Lankans over 18 Years of age are eligible to open an FD account.Minimum Deposit Rs. 10,000/.Period ï¿½ 01,03,06 Months and 01 to 05 Years.Rates changeble accoring to government rules and regulations.More info contact 011-XXXXXXX." ],
             "context_set": ""
         },
 
@@ -87,11 +87,8 @@
         {
             "tag": "leasing",
             "patterns": [ "what is leasing", "can I get lease for car?", "can I get lease for unregistered vehicle?" ],
-            "responses": [
-                "\"For Vehicles - Both registered and unregistered.Contact our leasing manager 011-XXXXXXX.],",
-                "context_set",
-                :,
-                ""
+            "responses": ["For Vehicles - Both registered and unregistered.Contact our leasing manager 011-XXXXXXX."],
+            "context_set" : ""
         },
 
         {
