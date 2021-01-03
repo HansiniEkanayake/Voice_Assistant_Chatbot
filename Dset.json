@@ -99,13 +99,6 @@
         },
 
         {
-            "tag": "other",
-            "patterns": [ "" ],
-            "responses": [ "sorry I can't recogonize what you entered." ],
-            "context_set": ""
-        },
-
-        {
             "tag": "hours",
             "patterns": [ "when are you guys open", "what are your hours", "hours of operation" ],
             "responses": [ "We are open 8am-3pm Monday-friday!" ],
