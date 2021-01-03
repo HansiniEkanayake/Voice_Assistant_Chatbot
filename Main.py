@@ -6,6 +6,7 @@ from gtts import gTTS
 from tempfile import TemporaryFile
 import pyttsx3
 import json
+import pickle
 import random
 #ML libaries
 import nltk
@@ -15,7 +16,6 @@ from NuralModel import NuralModel
 
 import numpy
 import tensorflow
-import tflearn
 
 
 stemmer = LancasterStemmer()

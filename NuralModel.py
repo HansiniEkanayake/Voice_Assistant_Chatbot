@@ -16,5 +16,9 @@ class NuralModel:
 
         nuralModel = tflearn.DNN(nuralNet)
 
-        nuralModel.fit(self.identifiedSet , self.output , n_epoch=1000 , batch_size=8 , show_metric=True)
-        nuralModel.save("BankModel.tflearn")
+        try:
+            nuralModel.load("BankModel.tflearn")
+        except :
+
+            nuralModel.fit(self.identifiedSet , self.output , n_epoch=1000 , batch_size=8 , show_metric=True)
+            nuralModel.save("BankModel.tflearn")
