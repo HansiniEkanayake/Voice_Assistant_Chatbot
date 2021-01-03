@@ -11,6 +11,7 @@ import random
 import nltk
 #nltk.download('punkt')
 from nltk.stem.lancaster import LancasterStemmer
+from NuralModel import NuralModel
 
 import numpy
 import tensorflow
@@ -46,8 +47,9 @@ labels = sorted(labels)
 
 
 for word in keyWords:
-    #Stemming converts the words in keyWords list into their root words
-    tempKeyWords.append(stemmer.stem(word.lower()))
+    if(word != "?"):
+        # Stemming converts the words in keyWords list into their root words
+        tempKeyWords.append(stemmer.stem(word.lower()))
 
 #Sort the stemmed word list in alphabatic order and remove duplicates
 tempKeyWords = sorted(list(set(tempKeyWords)))
@@ -82,6 +84,9 @@ output = numpy.array(output)
 print(patternVals)
 print(labels)
 print(patternKeys)
+print(keyWords)
+model = NuralModel(identifiedSet , output)
+NuralModel.AddLayers(model)
 
 
 
