@@ -1,10 +1,3 @@
-import os
-import playsound
-import time
-import speech_recognition 
-from gtts import gTTS
-from tempfile import TemporaryFile
-import pyttsx3
 import json
 import pickle
 import random
@@ -18,8 +11,6 @@ from UserInteract import UserInteract
 
 import numpy
 from tensorflow.python.framework import ops
-
-
 import tflearn
 
 
@@ -99,120 +90,61 @@ except:
 
 ops.reset_default_graph()
 
-# nuralNet = tflearn.input_data(shape=[None , len(identifiedSet[0])])
-# nuralNet = tflearn.fully_connected(nuralNet , 8)
-# nuralNet = tflearn.fully_connected(nuralNet , 8)
-# nuralNet = tflearn.fully_connected(nuralNet , len(output[0]) , activation="softmax")
-# nuralNet = tflearn.regression(nuralNet)
+nuralNet = tflearn.input_data(shape=[None , len(identifiedSet[0])])
+nuralNet = tflearn.fully_connected(nuralNet , 8)
+nuralNet = tflearn.fully_connected(nuralNet , 8)
+nuralNet = tflearn.fully_connected(nuralNet , len(output[0]) , activation="softmax")
+nuralNet = tflearn.regression(nuralNet)
+
+nuralModel = tflearn.DNN(nuralNet)
+
+try:
+    x5
+    nuralModel.load("BankModel.tflearn")
+except :
+
+    nuralModel.fit(identifiedSet , output , n_epoch=1000 , batch_size=8 , show_metric=True)
+    nuralModel.save("BankModel.tflearn")
+
+
+def bag_of_words(s, keyWords):
+    bag = [0 for _ in range(len(keyWords))]
+
+    s_words = nltk.word_tokenize(s)
+    s_words = [stemmer.stem(word.lower()) for word in s_words]
+
+    for se in s_words:
+        for i, w in enumerate(keyWords):
+            if w == se:
+                bag[i] = 1
+
+    return numpy.array(bag)
+
+
+def chat():
+    print("Start talking with the bot (type quit to stop)!")
+    while True:
+        inp = input("You: ")
+        if inp.lower() == "quit":
+            break
+
+        results = nuralModel.predict([bag_of_words(inp, keyWords)])
+        results_index = numpy.argmax(results)
+        tag = labels[results_index]
+
+        for tg in Dset["intents"]:
+            if tg['tag'] == tag:
+                responses = tg['responses']
+
+        print(random.choice(responses))
+
+
+chat()
+
+
+# model = NuralModel(identifiedSet , output)
+# nuralModel = model.AddLayers()
 #
-# nuralModel = tflearn.DNN(nuralNet)
 #
-# try:
-#     x5
-#     nuralModel.load("BankModel.tflearn")
-# except :
-#
-#     nuralModel.fit(identifiedSet , output , n_epoch=1000 , batch_size=8 , show_metric=True)
-#     nuralModel.save("BankModel.tflearn")
-#
-#
-# def bag_of_words(s, keyWords):
-#     bag = [0 for _ in range(len(keyWords))]
-#
-#     s_words = nltk.word_tokenize(s)
-#     s_words = [stemmer.stem(word.lower()) for word in s_words]
-#
-#     for se in s_words:
-#         for i, w in enumerate(keyWords):
-#             if w == se:
-#                 bag[i] = 1
-#
-#     return numpy.array(bag)
-#
-#
-# def chat():
-#     print("Start talking with the bot (type quit to stop)!")
-#     while True:
-#         inp = input("You: ")
-#         if inp.lower() == "quit":
-#             break
-#
-#         results = nuralModel.predict([bag_of_words(inp, keyWords)])
-#         results_index = numpy.argmax(results)
-#         tag = labels[results_index]
-#
-#         for tg in Dset["intents"]:
-#             if tg['tag'] == tag:
-#                 responses = tg['responses']
-#
-#         print(random.choice(responses))
-#
-#
-# chat()
-
-
-model = NuralModel(identifiedSet , output)
-nuralModel = model.AddLayers()
-
-
-userInteract = UserInteract(keyWords , labels , Dset)
-userInteract.chat(nuralModel , keyWords , labels , Dset)
-
-
-
-
-
-
-
-
-
-#Method for audio output using python text to speech
-def AudioOut(text):
-    #Transfers the text to an audion file in English using gTTS
-    #inText = gTTS(text=text , lang='en')
-    ##voiceFile = "Answer.mp3"
-    ##inText.save(voiceFile)
-    ##playsound.playsound(voiceFile)
-
-    #Using Tempory File
-    #file = TemporaryFile()
-    #inText.write_to_fp(file)
-    #playsound(file)
-    #file.close()
-
-    #Using pyttsx3
-
-    engine = pyttsx3.init()
-    voices = engine.getProperty('voices')
-    engine.setProperty('rate' , 110)
-    engine.setProperty('voice', voices[1].id)
-    engine.say(text)
-    engine.runAndWait()
-
-
-def AudioIn():
-    recognizer = speech_recognition.Recognizer()
-
-    ##Aquire and release the microphone(equals to try and finally)
-    with speech_recognition.Microphone() as micIn:
-        recognizer.adjust_for_ambient_noise(micIn)
-        print("Say Something")
-        audio = recognizer.listen(micIn)
-        print("Started to listen")
-        userWords = ""
-
-        try:
-            userWords = recognizer.recognize_google(audio , language='en-IN' )
-            print(userWords)
-        except  Exception as ex:
-            print("Exception Occoured " + ex)
-
-    return userWords
-
-
-#AudioOut("Hello! How are you")
-#
-# text2 = "Hello"
-#
-# if text == "Hello":
-#     print("Hello Again")
+# userInteract = UserInteract(keyWords , labels , Dset)
+# userInteract.chat(nuralModel , keyWords , labels , Dset)

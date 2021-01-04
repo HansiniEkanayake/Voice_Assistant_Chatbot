@@ -3,7 +3,7 @@
         {
             "tag": "greeting",
             "patterns": [ "Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up" ],
-            "responses": [ "Hello! Warmly welcome to BOC...Please select the category that you want to know: #DEPOSIT #LOAN", "Good to see you and Warmly welcome to BOC... Please select the category that you want to know: #DEPOSIT #LOAN", "Hi there, Warmly welcome to BOC... How can I help? Please select the category that you want to know: #DEPOSIT #LOAN" ],
+            "responses": [ "Hello! Warmly welcome to WestMinister Bank..Please select the category that you want to know: #DEPOSIT #LOAN", "Good to see you and Warmly welcome to WestMinister Bank... Please select the category that you want to know: #DEPOSIT #LOAN", "Hi there, Warmly welcome to WestMinister Bank... How can I help? Please select the category that you want to know: #DEPOSIT #LOAN" ],
             "context_set": ""
         },
 
@@ -31,35 +31,35 @@
         {
             "tag": "0-18Saving",
             "patterns": [ "what is the suitable saving for children", "can children below 18 open account", "what are the features of RAN KEKULU", "what is Ran Kekulu" ],
-            "responses": [ "Ran Kekulu account can be opened at any Bank of Ceylon branch island wide by a parent or a guardian for their children below 18 years.Offer 5%  interest rate.Want Original birth certificate of the child together with a photocopy,NIC of guardian." ],
+            "responses": [ "FutureBlooms account can be opened at any WestMinister Bank branch island wide by a parent or a guardian for their children below 18 years.Offer 5%  interest rate.Want Original birth certificate of the child together with a photocopy,NIC of guardian." ],
             "context_set": ""
         },
 
         {
             "tag": "18+Saving",
             "patterns": [ "what is 18+ saving?", "what are the features 18+?", "what is the age limit for 18+ saving?", "How could I open 18+ account?" ],
-            "responses": [ "18+ account can be opened at any Bank of Ceylon branch by any Sri Lankan citizen between the age of 18 to 25.Offer 0.5% higher interest rate than the normal savings account.Want NIC and Address proof." ],
+            "responses": [ "18+ account can be opened at any WestMinister Bank branch by any Sri Lankan citizen between the age of 18 to 25.Offer 0.5% higher interest rate than the normal savings account.Want NIC and Address proof." ],
             "context_set": ""
         },
 
         {
             "tag": "26-55Saving",
             "patterns": [ "what is the saving type for middle age one?", "what is the normal saving?", "How could I open normal saving account?", "what is the age range for normal account?" ],
-            "responses": [ "BoC Normal Savings Accounts can be opened by any Sri Lankan Citizen above the age of 18 years at any Bank of Ceylon branch island wide.Offer 4%  interest rate.Want NIC and Address proof." ],
+            "responses": [ "WestMinister Bank Normal Savings Accounts can be opened by any Sri Lankan Citizen above the age of 18 years at any WestMinister Bank branch island wide.Offer 4%  interest rate.Want NIC and Address proof." ],
             "context_set": ""
         },
 
         {
             "tag": "55+Saving",
             "patterns": [ "can senior person open account?", "what are the features for 55+?", "what is the saving type for person above 55?" ],
-            "responses": [ " BOC Senior Citizens Account can be opened at any Bank of Ceylon Branch island wide by a Sri Lankans over the age of 55 years.Offer 5%  interest rate.Want NIC and Address proof." ],
+            "responses": [ " WestMinister Bank Senior Citizens Account can be opened at any WestMinister Bank Branch island wide by a Sri Lankans over the age of 55 years.Offer 5%  interest rate.Want NIC and Address proof." ],
             "context_set": ""
         },
 
         {
             "tag": "womenSaving",
-            "patterns": [ "Is there any special saving type for women?", "what is kantha ran ginum account?", "what are saving for women?", "what are the features for kantha ran ginum account?" ],
-            "responses": [ "BOC Kantha Ran Ginum Account can be opened at any Bank of Ceylon Branch island wide if you are a woman of 18 years old or above.Offer 0.5% higher interest rate than the normal savings account.Want NIC and address proof." ],
+            "patterns": [ "Is there any special saving type for women?", "what is LeadingWomen account?", "what are saving for women?", "what are the features for LeadingWomen account?" ],
+            "responses": [ "WestMinister Bank LeadingWomen Account can be opened at any WestMinister Bank island wide if you are a woman of 18 years old or above.Offer 0.5% higher interest rate than the normal savings account.Want NIC and address proof." ],
             "context_set": ""
         },
 
@@ -94,7 +94,7 @@
         {
             "tag": "education",
             "patterns": [ "Want a loan for degree", "what are the feature of education loan?", "what is education loan?", "what are the eligibility for education loan?", "can I apply education loan for forign universities?" ],
-            "responses": [ "Can apply for local & forign universities.Option of paying only the interest until the degree is complete.BOC Customers, Students with minimum of 03 passes for G.C.E (A/L) or Students with minimum of 3 passes for G.C.E. (A/L) can apply this loan. you should want Loan Application,Letter from University,Proof of identification (NIC/Passport)." ],
+            "responses": [ "Can apply for local & forign universities.Option of paying only the interest until the degree is complete.WestMinister Bank Customers, Students with minimum of 03 passes for G.C.E (A/L) or Students with minimum of 3 passes for G.C.E. (A/L) can apply this loan. you should want Loan Application,Letter from University,Proof of identification (NIC/Passport)." ],
             "context_set": ""
         },
 
