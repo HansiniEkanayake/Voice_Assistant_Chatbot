@@ -17,7 +17,6 @@ class NuralModel:
         nuralModel = tflearn.DNN(nuralNet)
 
         try:
-            x
             nuralModel.load("BankModel.tflearn")
             return nuralModel
         except :
